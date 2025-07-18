@@ -16,7 +16,7 @@ That auxiliary matrix is first converted into an orthonormal basis `V_A`. The mo
        alt="FSTDMF is nothing but a set of Vinit and set loss of DMF model"
        width="420"/>
   <br/>
-  <em>Figure&nbsp;1 The sub‑space regulariser pulls the item matrix <strong>V</strong> toward the auxiliary sub‑space spanned by <strong>V<sub>A</sub></strong>.</em>
+  <em>Figure&nbsp;1 FSTDMF is nothing but a set of Vinit and set loss of DMF model.</em>
 </p>
 ---
 
@@ -28,7 +28,13 @@ That auxiliary matrix is first converted into an orthonormal basis `V_A`. The mo
 | **Ratings of the same titles in a **********************************second********************************** dataset** | 1️⃣ Keep only items present in *both* domains 2️⃣ Feed the source rating matrix to a **semi‑autoencoder**; grab the hidden layer ε 3️⃣ Thin‑QR/SVD → orthonormalise → `V_A`. |
 
 At training time we never change `V_A`; it stays fixed while the target‑domain item matrix `V` is **(i) initialised from it and (ii) nudged back toward its sub‑space** by the projection loss.
-assets/1.png
+<p align="center">
+  <img src="2.jpg"
+       alt="The two auxiliary information"
+       width="420"/>
+  <br/>
+  <em>Figure&nbsp;2 The two auxiliary information.</em>
+</p>
 
 ---
 
