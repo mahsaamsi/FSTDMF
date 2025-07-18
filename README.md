@@ -76,14 +76,7 @@ which maximises the alignment between the learned item matrix $V$ and the fixed 
 ## Complete loss function
 
 $$
-\mathcal{L}
-= \underbrace{\tfrac12\bigl\|(\hat R - R)\odot M\bigr\|_F^{2}}_{\text{reconstruction}}
-\;+\;
-\underbrace{\mathcal{L}_{\text{sub}}}_{\text{sub‑space regulariser}}
-\;+\;
-\underbrace{\tfrac{\alpha}{2n}\|V\|_F^{2}
-           \;+\;
-           \tfrac{\beta}{2}\sum_i\|\theta_i\|_{2}^{2}}_{\text{weight decay}}
+\mathcal{L} = \underbrace{\frac{1}{2}\left\|(\hat{R} - R) \odot M\right\|_F^2}_{\text{reconstruction}} \;+\; \underbrace{\mathcal{L}_{\text{sub}}}_{\text{sub-space regulariser}} \;+\; \underbrace{\frac{\alpha}{2n}\|V\|_F^2 \;+\; \frac{\beta}{2}\sum_i\|\theta_i\|_2^2}_{\text{weight decay}}
 $$
 
 - **$R$** – true rating matrix  
