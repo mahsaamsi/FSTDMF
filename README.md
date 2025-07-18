@@ -12,8 +12,8 @@ That auxiliary matrix is first converted into an orthonormal basis `V_A`. The mo
 * **V‑init.** A *latent matrix* `ε` produced by a semi‑autoencoder (trained on the target rating matrix) is \*\*copied into the item embedding table \*\***`V`** before training.
 * **Sub‑space loss.** A projection term keeps the learned item factors inside (or close to) the sub‑space spanned by `V_A`, so the knowledge encoded in the auxiliary view is preserved throughout training.
 <p align="center">
-  <img src="1.png"
-       alt="Projection of V onto sub‑space defined by V_A"
+  <img src="1.jpg"
+       alt="FSTDMF is nothing but a set of Vinit and set loss of DMF model"
        width="420"/>
   <br/>
   <em>Figure&nbsp;1 The sub‑space regulariser pulls the item matrix <strong>V</strong> toward the auxiliary sub‑space spanned by <strong>V<sub>A</sub></strong>.</em>
