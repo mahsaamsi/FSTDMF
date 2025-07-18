@@ -76,15 +76,22 @@ which maximises the alignment between the learned item matrix $V$ and the fixed 
 ## Complete loss function
 
 $$
-\mathcal{L} = \underbrace{\frac12\| (\hat R - R) \odot M \|_F^2}_{\text{reconstruction}}
-+ \underbrace{\mathcal{L}_{\text{sub}}}_{\text{sub‑space regulariser}}
-+ \underbrace{\frac{\alpha}{2n}\|V\|_F^2 + \frac{\beta}{2}\sum_i \|\theta_i\|_2^2}_{\text{weight decay}}
+\mathcal{L}= \underbrace{\tfrac{1}{2}\bigl\|(\hat{R}-R)\odot M\bigr\|_F^{2}}_{\text{reconstruction}}
+\;+\;
+\underbrace{\mathcal{L}_{\text{sub}}}_{\text{sub‑space regulariser}}
+\;+\;
+\underbrace{\tfrac{\alpha}{2n}\|V\|_F^{2}
+\;+\;
+\tfrac{\beta}{2}\sum_i\|\theta_i\|_2^{2}}_{\text{weight decay}}
 $$
 
-* **$R$** – true rating matrix; **$\hat R$** – model prediction.
-* \*\*Mask \*\***$M)$** filters out missing ratings so only observed entries contribute.
-* **$V$** – trainable item factors; **$\theta_i$** – all other network weights.
-* **$V_A$** is *fixed* and only appears inside $\mathcal{L}_{\text{sub}}$.
+- **$R$** – true rating matrix  
+- **$\hat{R}$** – model prediction  
+- **$M$** – mask that filters out missing ratings, so only observed entries contribute  
+- **$V$** – trainable item factors  
+- **$\theta_i$** – all other network weights  
+- **$V_A$** – *fixed* item factors that appear only inside $\mathcal{L}_{\text{sub}}$
+
 
 ---
 
