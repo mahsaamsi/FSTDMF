@@ -1,9 +1,5 @@
 # Feature Subspace Transfer Deep Matrix Factorization (FST‑DMF)
 
-*Reproduction & code in Google Colab*
-
----
-
 ## 📜 Paper in one sentence
 
 **FST‑DMF** augments a target rating matrix with an **auxiliary view of the items** — either
@@ -15,7 +11,7 @@ That auxiliary matrix is first converted into an orthonormal basis `V_A`. The mo
 
 * **V‑init.** A *latent matrix* `ε` produced by a semi‑autoencoder (trained on the target rating matrix) is \*\*copied into the item embedding table \*\***`V`** before training.
 * **Sub‑space loss.** A projection term keeps the learned item factors inside (or close to) the sub‑space spanned by `V_A`, so the knowledge encoded in the auxiliary view is preserved throughout training.
-
+assets/1.png
 ---
 
 ## 🔧 Building the auxiliary matrix `V_A`
@@ -26,6 +22,7 @@ That auxiliary matrix is first converted into an orthonormal basis `V_A`. The mo
 | **Ratings of the same titles in a **********************************second********************************** dataset** | 1️⃣ Keep only items present in *both* domains 2️⃣ Feed the source rating matrix to a **semi‑autoencoder**; grab the hidden layer ε 3️⃣ Thin‑QR/SVD → orthonormalise → `V_A`. |
 
 At training time we never change `V_A`; it stays fixed while the target‑domain item matrix `V` is **(i) initialised from it and (ii) nudged back toward its sub‑space** by the projection loss.
+assets/1.png
 
 ---
 
